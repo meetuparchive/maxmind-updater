@@ -8,8 +8,8 @@
 $ docker build -t meetup/maxmind-updater .
 ```
 
-volume mount `/conf` to directory containing `GeoIp.conf` file
-volume mount `/data` to directory containing `GeoIPCity.dat` file
+* volume mount `/conf` to directory containing `GeoIp.conf` file
+* volume mount `/data` to directory containing `GeoIPCity.dat` file
 
 ```sh
 $ docker run --rm \
