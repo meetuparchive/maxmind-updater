@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-result=0
-output=$(geoipupdate -v -f /conf/GeoIp.conf -d /data 2>&1) || result=$?
+output=$(geoipupdate -v -f ${CONF_DIR:-conf}/GeoIp.conf -d ${DATA_DIR:-data} 2>&1)
+result=$?
 
 if [[ "${output}" == *"No new updates available"* ]]; then
 	echo "👍 GeoIP Database up to date, no action needed."

@@ -27,5 +27,5 @@ RUN apt-get update \
 # https://github.com/maxmind/geoip-api-python#installation
 RUN pip install --upgrade setuptools && pip install GeoIP
 	
-COPY entrypoint.sh entrypoint.sh
-CMD ["./entrypoint.sh"]
+COPY entrypoint.sh /entrypoint.sh
+CMD ["/entrypoint.sh"]

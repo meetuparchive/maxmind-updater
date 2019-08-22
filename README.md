@@ -8,13 +8,16 @@
 $ docker build -t meetup/maxmind-updater .
 ```
 
-* volume mount `/conf` to directory containing `GeoIp.conf` file
-* volume mount `/data` to directory containing `GeoIPCity.dat` file
+This image is expected with code mounted to a workdir, as Github Actions does, with
+two environment varibles: `DATA_DIR` the directory to locate `GeoIPCity.dat`, and `CONF_DIR` to location `GeoIp.conf`. These both default to `data` and `conf` respectively.
+
 
 ```sh
 $ docker run --rm \
-	-v /path/to/conf:/conf \
-	-v /path/to/data:/data \
+	-v $(pwd):/code \
+	-w /code \
+	-e DATA_DIR:path/to/data \
+	-e CONF_DIR:path/to/conf \
 	meetup/maxmind-updater          
 👍 GeoIP Database up to date, no action needed.
 ```
