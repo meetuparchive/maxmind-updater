@@ -1,4 +1,4 @@
-# maxmind updater
+# maxmind updater [![](https://github.com/meetup/maxmind-updater/workflows/Main/badge.svg)](https://github.com/meetup/maxmind-updater/actions)
 
 > updates [legacy Maxmind geoip databases](https://dev.maxmind.com/geoip/legacy/downloadable/)
 
