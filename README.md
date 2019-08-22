@@ -22,6 +22,28 @@ $ docker run --rm \
 👍 GeoIP Database up to date, no action needed.
 ```
 
+### Github Actions
+
+```yaml
+name: GeoIp Update
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+      - name: Test
+        uses: docker://meetup/maxmind-updater:{docker-tag}
+        env:
+          DATA_DIR: path/to/data
+          CONF_DIR: path/to/conf
+      - name: Diff
+        run: git status
+```
+
 ## references
 
 * [geoipupdate tool](https://github.com/maxmind/geoipupdate-legacy)
