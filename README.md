@@ -24,9 +24,15 @@ $ docker run --rm \
 
 ### Github Actions
 
+Here's how you might run this container in Github Actions on a cron schedule
+
 ```yaml
 name: GeoIp Update
-on: push
+
+# https://help.github.com/en/articles/events-that-trigger-workflows#scheduled-events
+on:
+  schedule:
+  - cron:  '*/30 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
