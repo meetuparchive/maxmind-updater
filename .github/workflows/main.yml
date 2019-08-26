@@ -18,7 +18,7 @@ jobs:
       - name: Package
         uses: actions/docker/cli@master
         with:
-          args: build -t ${{ github.repository }}:${{ github.sha }} .
+          args: build -t ${{ github.repository }}:${{ github.sha }} -t ${{ github.repository }}:latest .
       # https://github.com/actions/docker/tree/master/login
       - name: Publish Auth
         uses: actions/docker/login@master
@@ -29,4 +29,4 @@ jobs:
       - name: Publish
         uses: actions/docker/cli@master
         with:
-          args: push ${{ github.repository }}:${{ github.sha }}
+          args: push ${{ github.repository }}:latest
