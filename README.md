@@ -2,6 +2,8 @@
 
 > updates [legacy Maxmind geoip databases](https://dev.maxmind.com/geoip/legacy/downloadable/)
 
+> **⚠️ Note:** To use this action, you must have access to the [GitHub Actions](https://github.com/features/actions) feature. GitHub Actions are currently only available in public beta. You can [apply for the GitHub Actions beta here](https://github.com/features/actions/signup/).
+
 ## usage
 
 ```sh
@@ -18,7 +20,7 @@ $ docker run --rm \
 	-w /code \
 	-e DATA_DIR:path/to/data \
 	-e CONF_DIR:path/to/conf \
-	meetup/maxmind-updater          
+	meetup/maxmind-updater
 👍 GeoIP Database up to date, no action needed.
 ```
 
